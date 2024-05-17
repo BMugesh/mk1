@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-learning Platform</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.promo-banner {
+    background-color: #ffeb3b;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative;
+}
+.promo-timer {
+    font-weight: bold;
+}
+.promo-close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+.logo img {
+    height: 40px;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.nav-links li {
+    margin: 0 10px;
+}
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+.search-bar {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+.login-button, .signup-button {
+    padding: 5px 15px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+}
+.signup-button {
+    background-color: #333;
+    color: #fff;
+    margin-left: 10px;
+}
+main {
+    padding: 20px;
+    background-color: #6a1b9a;
+    color: white;
+    text-align: center;
+}
+
+.cta-banner {
+    padding: 50px 20px;
+}
+
+.cta-banner h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.cta-banner p {
+    font-size: 18px;
+}
+.course-categories {
+    background-color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.course-categories h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.course-categories p {
+    font-size: 16px;
+    color: #666;
+}
+
+.category-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.category-tab {
+    background-color: #f4f4f4;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.category-tab.active {
+    background-color: #333;
+    color: white;
+}
+
+.course-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.course-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 200px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.course-card img {
+    width: 100%;
+    height: auto;
+}
+
+.course-info {
+    padding: 10px;
+}
+
+.course-info h3 {
+    font-size: 16px;
+    margin: 10px 0 5px;
+}
+
+.course-info p {
+    margin: 5px 0;
+    color: #666;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.feature {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feature h2 {
+    margin-top: 0;
+}
+
+.enterprise {
+    position: relative;
+}
+
+.enterprise-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #6a5acd;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.score-section {
+    margin-top: 40px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.score-section h2 {
+    margin-top: 0;
+}
+
+.score {
+    margin-top: 20px;
+}
+
+.score h3 {
+    margin: 0;
+}
+
+.score-graph {
+    margin-top: 20px;
+}
+
+.score-level {
+    margin-bottom: 10px;
+}
+
+.superior {
+    color: #4caf50;
+}
+
+.established {
+    color: #2196f3;
+}
+
+.developing {
+    color: #ff9800;
+}
+
+.limited {
+    color: #f44336;
+}
+.container1 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.container1 h1 {
+    margin-bottom: 20px;
+}
+
+.container1 .plans {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.container1 .plan {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(118, 32, 32, 0.1);
+    flex: 1;
+    position: relative;
+}
+
+.container1 .plan h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.container1 .plan p {
+    margin: 10px 0;
+}
+
+.container1 button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.container1 button:hover {
+    background-color: #555;
+}
+
+.container1 ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
+
+.container1 li {
+    margin: 10px 0;
+    padding-left: 20px;
+    position: relative;
+    font: italic;
+    font-optical-sizing: none;
+}
+
+.container1 li:before {
+    content: '✔';
+    color: #4caf50;
+    position: absolute;
+    left: 0;
+}
+
+    </style>
+</head>
+<body>
+    <div class="promo-banner">
+        <span>Learn the skills to lead the way | Get courses from just ₹399.</span>
+        <span class="promo-timer">6 days left!</span>
+        <button class="promo-close">✕</button>
+    </div>
+  <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#"><img src="logo.png" alt="E-learning Platform Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Categories</a></li>
+                <li>
+                    <input type="text" placeholder="Search for anything" class="search-bar" id="searchBar">
+                    <div class="search-suggestions" id="searchSuggestions"></div>
+                </li>
+                <li><a href="#">Plans & Pricing</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Teach</a></li>
+                <li><a href="#">Cart</a></li>
+                <li><a href="#" class="login-button">Log in</a></li>
+                <li><a href="#" class="signup-button">Sign up</a></li>
+                <li><button class="dark-mode-toggle">Toggle Dark Mode</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="cta-banner">
+            <h1>Lead your best life with new skills</h1>
+            <p>Grow your career and pursue your passions with courses from ₹399 through May 23.</p>
+        </div>
+        <section class="course-categories">
+            <h2>All the skills you need in one place</h2>
+            <p>From critical skills to technical topics, our platform supports your professional development.</p>
+            <div class="category-tabs">
+                <button class="category-tab active" data-category="web-development">Web Development</button>
+                <button class="category-tab" data-category="it-certifications">IT Certifications</button>
+                <button class="category-tab" data-category="leadership">Leadership</button>
+                <button class="category-tab" data-category="data-science">Data Science</button>
+                <button class="category-tab" data-category="communication">Communication</button>
+                <button class="category-tab" data-category="business-analytics">Business Analytics & Intelligence</button>
+            </div>
+                <div class="course-list" id="course-list">
+                    <div class="course-card">
+                        <img src="course1.jpg" alt="Course 1">
+                        <div class="course-info">
+                            <h3>The Complete 2024 Web Development Bootcamp</h3>
+                            <p>Dr. Angela Yu</p>
+                            <p>4.7 ★ (376,928)</p>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <img src="course2.jpg" alt="Course 2">
+                        <div class="course-info">
+                            <h3>The Web Developer Bootcamp</h3>
+                            <p>Colt Steele</p>
+                            <p>4.7 ★ (272,178)</p>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <img src="course3.jpg" alt="Course 3">
+                        <div class="course-info">
+                            <h3>Web Development Masterclass - Online Certification Course</h3>
+                            <p>YouAccel Training</p>
+                            <p>4.4 ★ (9,794)</p>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <img src="course4.jpg" alt="Course 4">
+                        <div class="course-info">
+                            <h3>Practical Web Development: 22 Courses in 1</h3>
+                            <p>Creative Online School</p>
+                            <p>4.4 ★ (4,297)</p>
+                        </div>
+                    </div>
+            </div>
+            <div class="container">
+                <h1>Learning focused on your goals</h1>
+                <div class="features">
+                    <div class="feature">
+                        <h2>Hands-on training</h2>
+                        <p>Upskill effectively with AI-powered coding exercises, practice tests, skills assessments, labs, and workspaces.</p>
+                    </div>
+                    <div class="feature">
+                        <h2>Certification prep</h2>
+                        <p>Prep for industry-recognized certifications by solving real-world challenges and earn badges along the way.</p>
+                    </div>
+                    <div class="feature enterprise">
+                        <h2>Insights and analytics</h2>
+                        <p>Fast-track goals with advanced insights plus a dedicated customer success team to help drive effective learning.</p>
+                        <span class="enterprise-tag">Enterprise Plan</span>
+                    </div>
+                    <div class="feature enterprise">
+                        <h2>Customizable content</h2>
+                        <p>Personalize learning paths with tailored content to meet specific organizational goals.</p>
+                        <span class="enterprise-tag">Enterprise Plan</span>
+                    </div>
+                </div>
+                <div class="score-section">
+                    <h2>Containerization</h2>
+                    <p>30 questions</p>
+                    <div class="score">
+                        <h3>Your score: 159</h3>
+                        <p>Your performance was better than 88% of Udemy learners who have completed this assessment.</p>
+                        <p>What do these numbers mean?</p>
+                    </div>
+                    <div class="score-graph">
+                        <div class="score-level superior">Superior (150-200)</div>
+                        <div class="score-level established">Established (100-149)</div>
+                        <div class="score-level developing">Developing (50-99)</div>
+                        <div class="score-level limited">Limited (0-49)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="container1">
+                <h1>Accelerate growth – for you or your organization</h1>
+                <p>Reach goals faster with one of our plans or programs. Try one free today or contact sales to learn more.</p>
+                <div class="plans">
+                    <div class="plan personal">
+                        <h2>Personal Plan</h2>
+                        <p>For you</p>
+                        <p><strong>Starting at ₹850 per month</strong></p>
+                        <p>Billed monthly or annually. Cancel anytime.</p>
+                        <button onclick="subscribe('Personal Plan')">Start subscription</button>
+                        <ul>
+                            <li>Access to 11,000+ top courses</li>
+                            <li>Certification prep</li>
+                            <li>Goal-focused recommendations</li>
+                            <li>AI-powered coding exercises</li>
+                        </ul>
+                    </div>
+                    <div class="plan team">
+                        <h2>Team Plan</h2>
+                        <p>For your team</p>
+                        <p><strong>₹1,167 a month per user</strong></p>
+                        <p>Billed annually. Cancel anytime.</p>
+                        <button onclick="subscribe('Team Plan')">Start subscription</button>
+                        <ul>
+                            <li>Access to 11,000+ top courses</li>
+                            <li>Certification prep</li>
+                            <li>Goal-focused recommendations</li>
+                            <li>AI-powered coding exercises</li>
+                            <li>Analytics and adoption reports</li>
+                        </ul>
+                    </div>
+                    <div class="plan enterprise">
+                        <h2>Enterprise Plan</h2>
+                        <p>For your whole organization</p>
+                        <p><strong>Contact sales for pricing</strong></p>
+                        <button onclick="requestDemo()">Request a demo</button>
+                        <ul>
+                            <li>Access to 25,000+ top courses</li>
+                            <li>Certification prep</li>
+                            <li>Goal-focused recommendations</li>
+                            <li>AI-powered coding exercises</li>
+                            <li>Advanced analytics and insights</li>
+                            <li>Dedicated customer success team</li>
+                            <li>International course collection featuring 15 languages</li>
+                            <li>Customizable content</li>
+                            <li>Hands-on tech training with add-on</li>
+                            <li>Strategic implementation services with add-on</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+    const promoCloseButton = document.querySelector('.promo-close');
+    promoCloseButton.addEventListener('click', function() {
+        document.querySelector('.promo-banner').style.display = 'none';
+    });
+    const categoryTabs = document.querySelectorAll('.category-tab');
+    categoryTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            categoryTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+        });
+    });
+});    
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                    }
+                });
+            });
+
+            observer.observe(document.querySelector('.course-list'));
+            const searchBar = document.getElementById('searchBar');
+            const searchSuggestions = document.getElementById('searchSuggestions');
+
+            searchBar.addEventListener('input', async () => {
+                const searchTerm = searchBar.value.trim();
+                if (searchTerm === '') {
+                    searchSuggestions.innerHTML = '';
+                    return;
+                }
+                const suggestions = await fetchSearchSuggestions(searchTerm);
+                searchSuggestions.innerHTML = '';
+                suggestions.forEach(suggestion => {
+                    const suggestionItem = document.createElement('div');
+                    suggestionItem.textContent = suggestion;
+                    searchSuggestions.appendChild(suggestionItem);
+                });
+            });
+
+            function fetchSearchSuggestions(searchTerm) {
+                return new Promise(resolve => {
+                    setTimeout(() => {
+                        resolve(['Web Development', 'Data Science', 'Programming', 'JavaScript']);
+                    }, 500);
+                });
+            }
+            generatePersonalizedRecommendations();
+            const darkModeToggle = document.querySelector('.dark-mode-toggle');
+            darkModeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+            });
+            const courseImages = document.querySelectorAll('.course-card img');
+            courseImages.forEach(img => {
+                img.addEventListener('load', () => {
+                    img.classList.add('loaded');
+                });
+            });
+            const bookmarkButtons = document.querySelectorAll('.bookmark-button');
+            bookmarkButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    button.classList.toggle('bookmarked');
+                    const courseTitle = button.closest('.course-card').querySelector('h3').textContent;
+                    if (button.classList.contains('bookmarked')) {
+                        console.log(`Course "${courseTitle}" bookmarked!`);
+                    } else {
+                        console.log(`Course "${courseTitle}" removed from bookmarks.`);
+                    }
+                });
+            });
+            const writeReviewButtons = document.querySelectorAll('.write-review-button');
+            writeReviewButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    console.log('Write a review modal opened!');
+                });
+            });
+            const languageSelector = document.getElementById('languageSelector');
+            languageSelector.addEventListener('change', () => {
+                const selectedLanguage = languageSelector.value;
+                console.log(`Language changed to ${selectedLanguage}`);
+            });
+    </script>
+</body>
+</html>
