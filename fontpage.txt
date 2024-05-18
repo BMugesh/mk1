@@ -575,6 +575,14 @@ h1 {
                 const selectedLanguage = languageSelector.value;
                 console.log(`Language changed to ${selectedLanguage}`);
             });
+  function subscribe(plan) {
+    alert(`You have selected the ${plan}`);
+}
+
+function requestDemo() {
+    alert('A representative will contact you for a demo.');
+}
+
     </script>
 </body>
 </html>
