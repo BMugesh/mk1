@@ -1,0 +1,2 @@
+login - >domain ,personal details,->domain-> like dashboard 
+user->domain->top rankers in the selected domain (based on the region)
